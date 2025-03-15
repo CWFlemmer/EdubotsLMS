@@ -17,9 +17,9 @@ services:
       context: .
       dockerfile: ./server/Dockerfile
     expose:
-     - 5031
+     - 5032
     ports:
-     - 5031:80
+     - 5032:80
     environment:
      - CHOKIDAR_USERPOLLING=true     
 
