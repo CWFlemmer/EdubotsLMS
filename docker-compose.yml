@@ -1,0 +1,43 @@
+services:
+  edubots-client:    
+    build:      
+      container_name: client_frontend
+      context: client
+      dockerfile: ./client/Dockerfile
+    expose:
+     - 5031
+    ports:
+     - 5031:80
+    environment:
+     - CHOKIDAR_USERPOLLING=true
+
+  edubots-server:    
+    build:
+      container_name: client_backend
+      context: backend
+      dockerfile: ./server/Dockerfile
+    expose:
+     - 5031
+    ports:
+     - 5031:80
+    environment:
+     - CHOKIDAR_USERPOLLING=true     
+
+  MySQL:
+    image: mysql:8.0.3
+    network_mode: bridge
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: edubotslms@123
+        MYSQL_DATABASE: EdubotsLMS
+    ports:
+      - 5507:3306
+
+  PhpMyAdmin:
+    image: phpmyadmin
+    network_mode: bridge
+    restart: always
+    ports:
+      - 5090:80
+    environment:
+      - PMA_ARBITRARY=1    
