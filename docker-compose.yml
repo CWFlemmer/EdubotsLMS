@@ -23,7 +23,7 @@ services:
     environment:
      - CHOKIDAR_USERPOLLING=true     
 
-  MySQL:
+  edubots-server-mysql:
     image: mysql:8.0.3
     network_mode: bridge
     restart: always
@@ -33,7 +33,7 @@ services:
     ports:
       - 5507:3306
 
-  PhpMyAdmin:
+  edubots-server-phpmyadmin:
     image: phpmyadmin
     network_mode: bridge
     restart: always
