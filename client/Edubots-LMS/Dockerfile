@@ -3,8 +3,7 @@ FROM node:20-alpine AS builder
 # Set working directory
 WORKDIR /client
 # Copy all files from current directory to working dir in image
-#COPY package*.json /client/
-COPY package*.json .
+COPY package*.json /client/
 # install node modules and build assets
 #RUN npm i && npm run build
 
