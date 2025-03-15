@@ -1,8 +1,8 @@
 services:
   edubots-client:    
-    build:      
-      container_name: client_frontend
-      context: client
+    container_name: client_frontend
+    build:            
+      context: .
       dockerfile: ./client/Edubots-LMS/Dockerfile
     expose:
      - 5031
@@ -12,9 +12,9 @@ services:
      - CHOKIDAR_USERPOLLING=true
 
   edubots-server:    
-    build:
-      container_name: client_backend
-      context: backend
+    container_name: client_backend
+    build:      
+      context: .
       dockerfile: ./server/Dockerfile
     expose:
      - 5031

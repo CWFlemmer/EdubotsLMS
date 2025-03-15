@@ -5,7 +5,7 @@ WORKDIR /client
 # Copy all files from current directory to working dir in image
 COPY package*.json /client/
 # install node modules and build assets
-RUN npm i && npm run build
+#RUN npm i && npm run build
 
 
 COPY . /client/
