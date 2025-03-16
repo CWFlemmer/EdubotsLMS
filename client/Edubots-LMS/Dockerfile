@@ -6,9 +6,7 @@ WORKDIR /client
 COPY package*.json /client/
 # install node modules and build assets
 #RUN npm i && npm run build
-
-
-COPY . /client/
+COPY /dist /client/
 # nginx state for serving content
 FROM nginx:alpine
 # Set working directory to nginx asset directory
