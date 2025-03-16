@@ -11,10 +11,6 @@ services:
      - TZ=Africa/Johannesburg
     ports:
      - 5032:3000
-    volumes:
-    - type: bind
-      source: /etc/edubots/server
-      target: /api
      
 
   edubots-server-mysql:
