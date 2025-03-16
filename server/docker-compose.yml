@@ -1,16 +1,4 @@
 services:
-  edubots-client:    
-    container_name: client_frontend
-    build:            
-      context: .
-      dockerfile: ./client/Edubots-LMS/Dockerfile
-    expose:
-     - 5031
-    ports:
-     - 5031:80
-    environment:
-     - CHOKIDAR_USERPOLLING=true
-
   edubots-server:    
     container_name: client_backend
     build:      
