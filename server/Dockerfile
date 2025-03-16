@@ -4,10 +4,10 @@ FROM node:20-alpine AS builder
 WORKDIR /api
 # Copy all files from current directory to working dir in image
 #COPY package*.json /api/
-COPY package*.json .
+COPY package.json ./
 # install node modules and build assets
 #RUN npm i && npm run build
 
-COPY . /api/
+COPY . .
 
-CMD ["npm", "start"]
+CMD ["node", "./index.js"]
