@@ -5,11 +5,16 @@ services:
       context: .
       dockerfile: Dockerfile
     expose:
-     - 5032
-    ports:
-     - 5032:3000
+     - 5032    
     environment:
      - CHOKIDAR_USERPOLLING=true     
+     - TZ=Africa/Johannesburg
+    ports:
+     - 5032:3000
+    volumes:      
+    - type: bind
+      source: /etc/edubots/server
+      target: /api
 
   edubots-server-mysql:
     image: mysql:8.0.3
