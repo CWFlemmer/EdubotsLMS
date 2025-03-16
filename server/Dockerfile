@@ -6,8 +6,6 @@ WORKDIR /api
 #COPY package*.json /api/
 COPY ../package.json*.json ./
 # install node modules and build assets
-RUN npm i
-
 COPY . .
 
 CMD ["node", "index.js"]
