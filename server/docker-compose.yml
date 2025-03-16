@@ -4,6 +4,7 @@ services:
     build:      
       context: .
       dockerfile: Dockerfile
+      target: base
     expose:
      - 5032    
     environment:
@@ -11,10 +12,6 @@ services:
      - TZ=Africa/Johannesburg
     ports:
      - 5032:3000
-    volumes:              
-      - type: bind
-        source: /etc/edubots/server
-        target: /api
 
   edubots-server-mysql:
     image: mysql:8.0.3
