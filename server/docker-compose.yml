@@ -11,9 +11,12 @@ services:
      - TZ=Africa/Johannesburg
     ports:
      - 5032:3000
-     
+    volumes:
+     - type: bind
+     - source: /etc/edubots/server 
+     - target: /api         
 
-  edubots-server-mysql:
+  edubots-db:
     image: mysql:8.0.3
     network_mode: bridge
     restart: always
@@ -23,7 +26,7 @@ services:
     ports:
       - 5507:3306
 
-  edubots-server-phpmyadmin:
+  edubots-phpmy:
     image: phpmyadmin
     network_mode: bridge
     restart: always
