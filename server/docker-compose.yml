@@ -13,8 +13,8 @@ services:
      - 5032:3000
     volumes:
      - type: bind
-     - source: /etc/edubots/server 
-     - target: /api         
+       source: /etc/edubots/server 
+       target: /api         
 
   edubots-db:
     image: mysql:8.0.3
