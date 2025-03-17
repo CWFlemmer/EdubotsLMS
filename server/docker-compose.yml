@@ -14,7 +14,7 @@ services:
     volumes:
      - type: bind
        source: /etc/edubots/server 
-       target: /api         
+       target: api         
 
   edubots-db:
     image: mysql:8.0.3
