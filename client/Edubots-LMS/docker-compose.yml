@@ -8,5 +8,9 @@ services:
      - 5031
     ports:
      - 5031:80
+    volumes:
+     - type: bind
+       source: /etc/edubots/client 
+       target: /usr/share/nginx/html     
     environment:
      - CHOKIDAR_USERPOLLING=true  
